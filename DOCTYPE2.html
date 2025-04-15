@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CABI</title>
+    <style>
+        /* Estilos básicos */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        /* Encabezado */
+        .header {
+            background-color: #800000;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .header img {
+            height: 50px;
+            vertical-align: middle;
+        }
+        .header h1 {
+            display: inline;
+            margin-left: 10px;
+            font-size: 24px;
+        }
+        /* Barra de navegación */
+        .nav {
+            background-color: #b8860b;
+            overflow: hidden;
+        }
+        .nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        /* Contenido principal */
+        .content {
+            padding: 20px;
+            background-color: white;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 1500px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .content h2 {
+            color: #800000;
+        }
+        .content p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        /* Botones */
+        .button {
+            display: inline-block;
+            background-color: #800000;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .button:hover {
+            background-color: #b8860b;
+        }
+        /* Íconos de redes sociales */
+        .social {
+            margin-top: 20px;
+        }
+        .social a {
+            margin-right: 10px;
+            color: #800000;
+            text-decoration: none;
+        }
+        .social a:hover {
+            text-decoration: underline;
+        }
+        /* Ajustes de texto */
+        .text-adjust {
+            margin-top: 20px;
+        }
+        .text-adjust button {
+            background-color: #b8860b;
+            border: none;
+            color: white;
+            padding: 10px;
+            margin-right: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .text-adjust button:hover {
+            background-color: #800000;
+        }
+        .seccion {
+            display: none; /* Ocultar secciones por defecto */
+        }
+        /* Dropdown (submenú) */
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn {
+            font-size: 16px; 
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit; /* Match the nav font */
+            margin: 0; /* Reset margin */
+        }
+        .dropdown-content {
+            display: none; /* Ocultar por defecto */
+            position: absolute;
+            background-color: #f9f9f9; /* Fondo del submenú */
+            min-width: 200px; /* Ancho mínimo */
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1; /* Asegurar que esté sobre otros elementos */
+        }
+        .dropdown-content a {
+            float: none; /* Quitar flotado */
+            color: black; /* Color del texto */
+            padding: 12px 16px; /* Espaciado interno */
+            text-decoration: none; /* Sin subrayado */
+            display: block; /* Mostrar como bloque */
+            text-align: left; /* Alinear texto a la izquierda */
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd; /* Fondo al pasar el mouse */
+        }
+        .dropdown:hover .dropdown-content {
+            display: block; /* Mostrar submenú al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <div class="header">
+       <!-- <img src="logo CABI.png" alt="ATDT CABI"> ima -->
+        <h1>ATDT CABI</h1>
+    </div>
+
+    <!-- Barra de navegación -->
+    <div class="nav">
+        <a href="https://drive.google.com/file/d/1qJfbrOK04RtzGRI_Oftk9qSyzsvzs-2q/view" target="_blank" rel="noopener noreferrer">Llave MX</a>
+        <a href="#cnbb">Coordinación Nacional de Becas para el Bienestar </a>
+        <!-- Submenú para Programas Sociales -->
+        <div class="dropdown">
+            <button class="dropbtn">Programas Sociales</button>
+            <div class="dropdown-content">
+                <a href="#programa1">Pensión Adultos Mayores</a>
+                <a href="#programa2">Beca Benito Juárez</a>
+                <a href="#programa3">Salud Casa por Casa</a>
+            </div>
+          </div>
+        <a href="#tramites">Trámites federales</a>
+        <a href="#denuncia">Denuncia anónima</a>
+        <a href="#megaf">Mega Farmacia</a>
+        <a href="#sre">Secretaría de Relaciones Exteriores</a>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="content">
+        <h2>Información general</h2>
+        <p>MIT General</p>
+        <p>El Centro de Atención para el Bienestar un punto de contacto único para los ciudadanos, proporcionando servicio y asistencia para Llave MX, así como información de trámites y programas sociales federales.</p>
+        <p>Lo que existe presencial puede existir digital...</p>
+        <form id="formulario">
+            <!-- Información General -->
+            <fieldset>
+                <legend>Información General</legend>
+                <label for="IDA">ID Agente</label><br>
+                <input type="text" id="IDA" name="IDA" required placeholder="Coloca tu id" size="30"><br><br>
+    
+                <label for="folio-s">Folio de servicio (llamada S/N, correo eléctronico, folio motor)</label><br>
+                <input type="text" id="folio-s" name="folio-s" required placeholder="Folio conforme al servicio registrado" size="30"><br><br>
+    
+            <label for="NombreU">Nombre del usuario</label><br>
+                <input type="text" id="NombreU" name="NombreU" required placeholder="Nombre del usuario que llama" size="30"><br><br>
+    
+                <label for="usuario">Usuario (puedes ayudarte con la CURP)</label><br>
+                <input type="radio" id="masculino" name="usuario" value="Masculino">
+                <label for="masculino">Masculino</label>
+                <input type="radio" id="femenino" name="usuario" value="Femenino">
+                <label for="femenino">Femenino</label>
+                <input type="radio" id="menor" name="usuario" value="Menor">
+                <label for="menor">Menor de edad</label>
+                <input type="radio" id="sin_identificar" name="usuario" value="sin_identificar">
+                <label for="sin_identificar">No se pudo identificar</label>                
+                <br><br>
+    
+            <label for="estado">¿De qué Estado nos esta marcando?</label><br>
+            <select id="estado" name="estado">
+            <option value="" disabled selected> Selecciona la entidad federativa </option>
+            <option value="noproporciona">No proporcionado</option>
+            <option value="Aguascalientes">Aguascalientes</option>
+            <option value="Baja California">Baja California</option>
+            <option value="Baja California">Baja California Sur</option>
+            <option value="Chiapas">Chiapas</option>
+            <option value="CDMX">Ciudad de México</option>
+            <option value="Coahuila">Coahuila</option>
+            <option value="Colima">Colima</option>
+            <option value="Durango">Durango</option>
+            <option value="edomex">Estado de México</option>
+            <option value="Guanajuato">Guanajuato</option>
+            <option value="Guerrero">Guerrero</option>
+            <option value="Hidalgo">Hidalgo</option>
+            <option value="Jalisco">Jalisco</option>
+            <option value="Michoacan">Michoacán</option>
+            <option value="Morelos">Morelos</option>
+            <option value="Nayarit">Nayarit</option>
+            <option value="Nuevoleon">Nuevo León</option>
+            <option value="Oaxaca">Oaxaca</option>
+            <option value="Puebla">Puebla</option>
+            <option value="Queretaro">Querétaro</option>
+            <option value="SLP">San Luis Potosí</option>
+            <option value="Sinaloa">Sinaloa</option>
+            <option value="Sonora">Sonora</option>
+            <option value="Tabasco">Tabasco</option>
+            <option value="Tamaulipas">Tamaulipas</option>
+            <option value="Tlaxcala">Tlaxcala</option>
+            <option value="Veracruz">Veracruz</option>
+            <option value="Yucatan">Yucatán</option>
+            <option value="Zacatecas">Zacatecas</option>
+            </select><br><br>
+            </fieldset>
+    
+            <!-- Selección de la Consulta -->
+            <fieldset>
+                <legend>Tipo de Consulta</legend>
+                <label for="tipo-consulta">Selecciona el tipo de consulta:</label>
+                <select id="tipo-consulta" name="tipo-consulta" required>
+                    <option value="">--Seleccionar--</option>
+                    <option value="llaveMX">Llave MX</option>
+                    <option value="CNBB">CNBB</option>
+                    <option value="ProgramasS">Programas Sociales</option>
+                    <option value="TramitesFed">Trámites Federales</option>
+                    <option value="Denuncia">Denuncia anónima</option>
+                    <option value="Megafarmacia">Mega Farmacia</option>
+                    <option value="pba">Llamadas de prueba, broma, audio</option>
+                    <option value="Otros">Otro</option>
+    
+                </select>
+            </fieldset>
+            <br>
+            <!-- Secciones dinámicas -->
+            <div id="llaveMX" class="seccion">
+                <fieldset>
+                <legend><b>Llave MX</b></legend>
+                <P>Llave MX es la Identidad digital, con la que las y los ciudadanos podrán identificarse
+                    digitalmente en distintos portales del Gobierno de México.</P>
+                <p><a href="https://docs.google.com/document/d/1z1Piz7jo_KXgF6a3miIdLZ-MhOXCcQHwevR2lafW844/edit?tab=t.0">PLANTILLAS DE RESPUESTA LLAVE MX</a></p>
+                <label for="llaveMX-resp">Respuesta al usuario</label><br>
+                <select id="llaveMX-resp" name="llaveMX-resp" required>
+                    <option value="Modificación de datos">Modificación de datos</option>
+                    <option value="Creación de cuenta Llave MX">Creación de cuenta Llave MX</option>
+                    <option value="Recuperación de contraseña">Recuperación de contraseña</option>
+                    <option value="Verificación de los dos medios de contacto">Verificación de los dos medios de contacto</option>
+                    <option value="Verificación de correo electrónico">Verificación de correo electrónico</option>
+                    <option value="Actualización de CURP">Actualización de CURP</option>
+                    <option value="Actualización de medios de contacto">Actualización de medios de contacto</option>
+                    <option value="Correo en otra cuenta">Correo en otra cuenta</option>
+                    <option value="Número tel en otra cuenta">Número telefónico en otra cuenta</option>
+                    <option value="Los medios de contacto están en otra cuenta">Los medios de contacto están en otra cuenta</option>
+                    <option value="Sólo información">Sólo información</option>
+                    <option value="Sin modificación">Sin modificación</option>
+                    <option value="Menor de edad">Menor de edad</option>
+                    <option value="Eliminación de la cuenta">Eliminación de la cuenta</option>
+                    <option value="Recuperación de usuario">Recuperación de usuario</option> 
+                </select>
+                <br>
+                <br>
+                <label for="llaveMX-estatus">Estatus</label><br>
+                <select id="llaveMX-estatus" name="llaveMX-estatus" required>
+                    <option value="Atendido">Atendido</option>
+                    <option value="Se brindaron instrucciones">Se brindaron instrucciones</option>
+                    <option value="Información errónea">Información errónea</option>
+                    <option value="Pendiente por cierre de folio">Pendiente por cierre de folio</option>
+                </select>
+                <br>
+                </fieldset>    
+            </div>
+    
+            <div id="CNBB" class="seccion">
+                <fieldset>
+                    <legend><B>Coordinación Nacional de Becas para el Bienestar</B></legend>
+                <P>Canalización a la Coordinación de Becas para el Bienestar, 55-11-62-03-00 de lunes a viernes, en días hábiles, de 08:00 a 22:00 horas y sábado de
+                    9:00 a 14:00 horas (tiempo del centro de México).</P>
+                <label for="CNBB-Usu">Usuario</label><br>
+                <select id="CNBB-Usu" name="CNBB-Usu" required>
+                    <option value="" disabled selected> Selecciona al usuario</option>
+                    <option value="Padre">Padre</option>
+                    <option value="Madre">Madre</option>
+                    <option value="Beneficiario">Beneficiario</option>
+                    <option value="Beneficiario menor de edad">Beneficiario menor de edad</option>
+                </select><br>
+                <Br>
+                <label for="CNBB-NomAlum">Nombre del alumno</label><br>
+                <input type="text" id="CNBB-NomAlum" name="CNBB-NomAlum" required placeholder="Nombre del alumno" size="30">
+                <Br><Br>
+                <label for="CNBB-CURPAlum">CURP del alumno</label><br>
+                <input type="text" id="CNBB-CURPAlum" name="CNBB-CURPAlum" required placeholder="CURP del alumno" size="30">
+                <br><Br>
+                <label for="CNBB-Beca">¿A qué beca se refiere?</label><br>
+                <select id="CNBB-Beca" name="CNBB-Beca" required>
+                    <option value="" disabled selected> Selecciona el tipo de beca</option>
+                    <option value="Beca Rita Cetina">Beca Rita Cetina</option>
+                    <option value="Beca Benito Juárez Media Superior">Beca Benito Juárez Media Superior</option>
+                </select><br><br>
+                <label for="CNBB-Telco">Tel. Contacto</label><br>
+                <input type="text" id="CNBB-Telco" name="CNBB-Telco" required placeholder="Teléfono de contacto" size="30">
+                <Br><Br>
+                <label for="CNBB-Corrco">Correo de contacto</label><br>
+                <input type="text" id="CNBB-Corrco" name="CNBB-Corrco" required placeholder="Correo electrónico" size="30">
+                <Br><Br>
+                <label for="CNBB-fecha">Fecha de contacto con la coordinación</label><br>
+                <input type="date" id="CNBB-fecha" name="CNBB-fecha"><br><br>
+                <label for="CNBB-Des">Describe la problemática</label><br>
+                <textarea id="CNBB-Des" name="CNBB-Des" style="width:500px; height:100px;">Captura la problemática que reporta el usuario</textarea>
+                <Br><Br>
+                <label for="CNBB-agnC">Nombre del agente que atendió en la coordinación</label><br>
+                <input type="text" id="CNBB-agnC" name="CNBB-agnC" required placeholder="Nombre del agente en la coordinación" size="30">
+                <Br><Br>
+            </fieldset>                              
+            </div>
+            
+            <div id="ProgramasS" class="seccion">
+            <fieldset>
+                <legend><B>Programas sociales federales</B></legend>
+                <P>Listado de los programas sociales</P>
+                <label for="Prog-Soc">Programa social</label><br>
+                <select id="Prog-Soc" name="Prog-Soc" required>
+                    <option value="" disabled selected> Selecciona el programa</option>
+                    <option value="Banco del Bienestar">Banco del Bienestar</option>
+                    <option value="CONAMER">Comisión nacional de mejora regulatoria (CONAMER)</option>
+                    <option value="Pensión mujeres bienestar">Pensión mujeres bienestar</option>
+                    <option value="Beca Universal Rita Cetina">Beca Universal Rita Cetina</option>
+                    <option value="Salud Casa por Casa">Salud Casa por Casa</option>
+                    <option value="Pensión Para el Bienestar de las Personas Adultas Mayores">Pensión Para el Bienestar de las Personas Adultas Mayores</option>
+                    <option value="Sembrando Vida">Sembrando Vida</option>
+                    <option value="Jóvenes Construyendo el Futuro">Jóvenes Construyendo el Futuro</option>
+                    <option value="Beca Benito Juárez Educación Básica">Beca Benito Juárez Educación Básica</option>
+                    <option value="Beca Benito Juárez Educación Media Superior">Beca Benito Juárez Educación Media Superior</option>
+                    <option value="Beca Benito Juárez Educación Superior/SUBES">Beca Benito Juárez Educación Superior/SUBES</option>
+                    <option value="Pensión para el Bienestar de las Personas con Discapacidad Permanente">Pensión para el Bienestar de las Personas con Discapacidad Permanente</option>
+                    <option value="Programa para el bienestar de niñas y niños hijos de madres trabajadoras">Programa para el bienestar de niñas y niños hijos de madres trabajadoras</option>
+                    <option value="La Escuela es Nuestra">La Escuela es Nuestra</option>
+                    <option value="Producción para el Bienestar">Producción para el Bienestar</option>
+                    <option value="BIENPESCA">BIENPESCA</option>
+                    <option value="Fertilizantes para el Bienestar">Fertilizantes para el Bienestar</option>
+                    <option value="Precios de Garantía">Precios de Garantía</option>
+                    <option value="Ve por México">Ve por México</option>
+                    <option value="Corazón de Mujer">Corazón de Mujer</option>
+                    <option value="Beca Altamira">Beca Altamira</option>
+                    <option value="Uniformes Oaxaca">Uniformes Oaxaca</option>
+                    <option value="OtroP">Otro programa</option>
+                </select><br><br>
+                <!-- Pregunta Para otros -->
+                    <div id="otrosp" class="seccion" style="display: none;">
+                        <label for="ProgramasS-otro">Escribe el nombre del programa social</label><br>
+                        <input type="text" id="ProgramasS-otro" name="ProgramasS-otro" required placeholder="Nombre del programa" size="30">
+                        <br>
+                    </div>
+                <label for="ProgramasS-Des">Descripción de la solicitud</label><br>
+                <textarea id="ProgramasS-Des" name="ProgramasS-Des" style="width:500px; height:100px;">Detalle del requerimiento del servicio</textarea>
+                <Br><Br>
+            </fieldset>
+            </div>
+            <br>
+
+            <div id="TramitesFed" class="seccion">
+            <fieldset>
+                <legend><B>Trámites federales</B></legend>
+                <P>Listado de los trámites federales más comunes</P>
+                <label for="TF">Trámites Federales</label><br>
+                <select id="TF" name="TF" required>
+                    <option value="" disabled selected> Selecciona el trámite</option>
+                    <option value="México te abraza"">México te abraza</option>
+                    <option value="CURP">CURP</option>
+                    <option value="Acta de nacimiento">Acta de Nacimiento</option>
+                    <option value="INE">INE</option>
+                    <option value="RFC">RFC</option>
+                    <option value="Cédula Profesional">Cédula Profesional</option>
+                    <option value="Pasaporte">Pasaporte</option>
+                    <option value="CFE">CFE</option>
+                    <option value="Cartilla Militar">Cartilla Militar</option>
+                    <option value="Cita médica del ISSSTE">Cita médica del ISSSTE</option>
+                    <option value="Pensión por jubilación ISSSTE">Pensión por jubilación ISSSTE</option>
+                    <option value="Licencia Federal">Licencia Federal</option>
+                    <option value="INAPAM">INAPAM</option>
+                    <option value="Mi Derecho mi lugar">Mi Derecho mi lugar</option>
+                    <option value="CONAMER">CONAMER</option>
+                </select>
+            </div>
+                <!-- Sección Denuncia Anónima -->
+                <div id="Denuncia" class="seccion">
+                    <fieldset>
+                    <legend><b>Denuncia anónima</b></legend>
+                    <P>MIT Denuncia Anónima.</P>
+                    <label for="Denuncia-tipo">Tipo de denuncia</label><br>
+                    <select id="Denuncia-tipo" name="Denuncia-tipo" required>
+                        <option value="Punto de venta">Punto de venta</option>
+                        <option value="Vendedor de droga">Vendedor de droga</option>
+                        <option value="Corrupción de autoridades">Corrupción de autoridades</option>
+                        <option value="Lugar de producción">Lugar de producción</option>
+                        <option value="Consumo">Consumo</option>
+                        <option value="Afectación a la sana convivencia">Afectación a la sana convivencia</option>
+                        <option value="Almacenamiento - distribución">Almacenamiento - distribución</option>
+                        <option value="Otros">Otros</option> 
+                    </select>
+                    <br><br>
+                    <label for="Denuncia-Des">Descripción del Evento</label><br>
+                        <textarea id="Denuncia-Des" name="Denuncia-Des" style="width:500px; height:100px;">Detalles del evento</textarea>
+                    <Br><Br>
+                    <label for="Denuncia-fecha">Fecha del último evento</label><br>
+                        <input type="date" id="Denuncia-fecha" name="Denuncia-fecha"><br><br>
+                    <label for="Denuncia-hora">Hora aproximada del último evento</label><br>
+                        <input type="time" id="Denuncia-hora" name="Denuncia-hora"><br><br>
+                    <label for="Denuncia-DesLugar">Descripción del lugar del evento</label><br>
+                        <textarea id="Denuncia-DesLugar" name="Denuncia-DesLugar" style="width:500px; height:100px;">Describe el lugar</textarea>
+                    <Br><Br>
+                    <label for="Denuncia-Calle">Calle</label><br>
+                        <input type="text" id="Denuncia-Calle" name="Denuncia-Calle" required placeholder="Nombre de la calle" size="30"><br><br>
+                    <label for="Denuncia-Num-int">Número interior</label><br>
+                        <input type="text" id="Denuncia-Num-int" name="Denuncia-Num-int" required placeholder="Número interior" size="30"><br><br>
+                    <label for="Denuncia-Num-ext">Número exterior</label><br>
+                        <input type="text" id="Denuncia-Num-ext" name="Denuncia-Num-ext" required placeholder="Número exterior" size="30"><br><br>
+                    <label for="Denuncia-Col">Colonia</label><br>
+                        <input type="text" id="Denuncia-Col" name="Denuncia-Col" required placeholder="Colonia" size="30"><br><br>
+                    <label for="Denuncia-Ciud">Ciudad o Alcaldía</label><br>
+                        <input type="text" id="Denuncia-Ciud" name="Denuncia-Ciud" required placeholder="Ciudad o Alcaldía" size="30"><br><br>
+                    <label for="Denuncia-CP">Código postal</label><br>
+                        <input type="text" id="Denuncia-CP" name="Denuncia-CP" required placeholder="Código postal" size="30"><br><br>
+                    <label for="Denuncia-estado">Entidad federativa del evento</label><br>
+                        <select id="Denuncia-estado" name="Denuncia-estado">
+                        <option value="" disabled selected> Selecciona la entidad federativa </option>
+                        <option value="Aguascalientes">Aguascalientes</option>
+                        <option value="Baja California">Baja California</option>
+                        <option value="Baja California">Baja California Sur</option>
+                        <option value="Chiapas">Chiapas</option>
+                        <option value="CDMX">Ciudad de México</option>
+                        <option value="Coahuila">Coahuila</option>
+                        <option value="Colima">Colima</option>
+                        <option value="Durango">Durango</option>
+                        <option value="edomex">Estado de México</option>
+                        <option value="Guanajuato">Guanajuato</option>
+                        <option value="Guerrero">Guerrero</option>
+                        <option value="Hidalgo">Hidalgo</option>
+                        <option value="Jalisco">Jalisco</option>
+                        <option value="Michoacan">Michoacán</option>
+                        <option value="Morelos">Morelos</option>
+                        <option value="Nayarit">Nayarit</option>
+                        <option value="Nuevoleon">Nuevo León</option>
+                        <option value="Oaxaca">Oaxaca</option>
+                        <option value="Puebla">Puebla</option>
+                        <option value="Queretaro">Querétaro</option>
+                        <option value="SLP">San Luis Potosí</option>
+                        <option value="Sinaloa">Sinaloa</option>
+                        <option value="Sonora">Sonora</option>
+                        <option value="Tabasco">Tabasco</option>
+                        <option value="Tamaulipas">Tamaulipas</option>
+                        <option value="Tlaxcala">Tlaxcala</option>
+                        <option value="Veracruz">Veracruz</option>
+                        <option value="Yucatan">Yucatán</option>
+                        <option value="Zacatecas">Zacatecas</option>
+                        </select><br><br>
+                    <label for="Denuncia-Entre-c">Entre calles</label><br>
+                        <input type="text" id="Denuncia-Entre-c" name="Denuncia-Entre-c" required placeholder="Entre las calles" size="30"><br><br>
+                    <label for="Denuncia-refe">Referencia del lugar</label><br>
+                        <input type="text" id="Denuncia-refe" name="Denuncia-refe" required placeholder="" size="30"><br><br>
+                    <label for="Denuncia-NomInv">Nombre del involucrado</label><br>
+                        <input type="text" id="Denuncia-NomInv" name="Denuncia-NomInv" required placeholder="" size="30"><br><br>
+                    <label for="Denuncia-Alias">Alias</label><br>
+                        <input type="text" id="Denuncia-Alias" name="Denuncia-Alias" required placeholder="" size="30"><br><br>
+                    <label for="Denuncia-edad">Edad</label><br>
+                        <select id="Denuncia-edad" name="Denuncia-edad" required>
+                            <option value="">Selecciona tu edad</option>
+                            <option value="10">10</option>
+                            <option value="11">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                            <option value="32">32</option>
+                            <option value="33">33</option>
+                            <option value="34">34</option>
+                            <option value="35">35</option>
+                            <option value="36">36</option>
+                            <option value="37">37</option>
+                            <option value="38">38</option>
+                            <option value="39">39</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                            <option value="42">42</option>
+                            <option value="43">43</option>
+                            <option value="44">44</option>
+                            <option value="45">45</option>
+                            <option value="46">46</option>
+                            <option value="47">47</option>
+                            <option value="48">48</option>
+                            <option value="49">49</option>
+                            <option value="50">50</option>
+                            <option value="51">51</option>
+                            <option value="52">52</option>
+                            <option value="53">53</option>
+                            <option value="54">54</option>
+                            <option value="55">55</option>
+                            <option value="56">56</option>
+                            <option value="57">57</option>
+                            <option value="58">58</option>
+                            <option value="59">59</option>
+                            <option value="60">60</option>
+                            <option value="61">61</option>
+                            <option value="62">62</option>
+                            <option value="63">63</option>
+                            <option value="64">64</option>
+                            <option value="65">65</option>
+                            <option value="66">66</option>
+                            <option value="67">67</option>
+                            <option value="68">68</option>
+                            <option value="69">69</option>
+                            <option value="70">70</option>
+                            <option value="71">71</option>
+                            <option value="72">72</option>
+                            <option value="73">73</option>
+                            <option value="74">74</option>
+                            <option value="75">75</option>
+                            <option value="76">76</option>
+                            <option value="77">77</option>
+                            <option value="78">78</option>
+                            <option value="79">79</option>
+                            <option value="80">80</option>
+                            <option value="81">81</option>
+                            <option value="82">82</option>
+                            <option value="83">83</option>
+                            <option value="84">84</option>
+                            <option value="85">85</option>
+                            <option value="86">86</option>
+                            <option value="87">87</option>
+                            <option value="88">88</option>
+                            <option value="89">89</option>
+                            <option value="90">90</option>
+                            <option value="91">91</option>
+                            <option value="92">92</option>
+                            <option value="93">93</option>
+                            <option value="94">94</option>
+                            <option value="95">95</option>
+                            <option value="96">96</option>
+                            <option value="97">97</option>
+                            <option value="98">98</option>
+                            <option value="99">99</option>
+                            <option value="100">100</option>
+                            <option value="101">101</option>
+                            <option value="102">102</option>
+                            <option value="103">103</option>
+                            <option value="104">104</option>
+                            <option value="105">105</option>
+                        </select><Br><Br>
+                        <label for="Denuncia-genero">Género</label><br>
+                            <select id="Denuncia-genero" name="Denuncia-genero" required>
+                              <option value="">Selecciona el género</option>
+                              <option value="Femenino">Femenino</option>
+                              <option value="Masculino">Masculino</option>
+                              <option value="Otro">Otro/Sin definir</option>
+                        </select><br><br>
+                        <label for="Denuncia-tc">Tipo de cabello</label><br>
+                        <select id="Denuncia-tc" name="Denuncia-tc" required>
+                          <option value="">Elige el tipo de cabello</option>
+                          <option value="lacio">Lacio</option>
+                          <option value="Onculado">Onculado</option>
+                          <option value="Chino">Chino</option>
+                          <option value="Calvo">Calvo</option>
+                        </select><br><br>
+                        <label for="Denuncia-to">Tipo de ojos</label><br>
+                        <select id="Denuncia-to" name="Denuncia-to" required>
+                          <option value="">Elige el tipo de ojos</option>
+                          <option value="Redondos">Redondos</option>
+                          <option value="Almendrados">Almendrados</option>
+                          <option value="Rasgados">Rasgados</option>
+                        </select><br><br>
+                        <label for="Denuncia-cpiel">Color de piel</label><br>
+                        <select id="Denuncia-cpiel" name="Denuncia-cpiel" required>
+                          <option value="">Elige color de piel</option>
+                          <option value="Blanca">Blanca</option>
+                          <option value="Morena clara">Morena clara</option>
+                          <option value="Morena obscura">Morena obscura</option>
+                          <option value="Amarillo">Amarillo</option>
+                          <option value="Albino">Albino</option>
+                        </select><br><br>
+                        <label for="Denuncia-comp">Complexión</label><br>
+                        <select id="Denuncia-comp" name="Denuncia-comp" required>
+                          <option value="">Elige la complexión</option>
+                          <option value="Obesa">Obesa</option>
+                          <option value="Robusta">Robusta</option>
+                          <option value="Atlética">Atlética</option>
+                          <option value="Delgada">Delgada</option>
+                          <option value="Mediana">Mediana</option>
+                        </select><br><br>
+                        <label for="Denuncia-estatura">Estatura</label><br>
+                        <select id="Denuncia-estatura" name="Denuncia-estatura" required>
+                          <option value="">Estatura en metros</option>
+                          <option value="1.30">1.30 m.</option>
+                          <option value="1.31">1.31 m.</option>
+                          <option value="1.32">1.32 m.</option>
+                          <option value="1.33">1.33 m.</option>
+                          <option value="1.34">1.34 m.</option>
+                          <option value="1.35">1.35 m.</option>
+                          <option value="1.36">1.36 m.</option>
+                          <option value="1.37">1.37 m.</option>
+                          <option value="1.38">1.38 m.</option>
+                          <option value="1.39">1.39 m.</option>
+                          <option value="1.40">1.40 m.</option>
+                          <option value="1.41">1.41 m.</option>
+                          <option value="1.42">1.42 m.</option>
+                          <option value="1.43">1.43 m.</option>
+                          <option value="1.44">1.44 m.</option>
+                          <option value="1.45">1.45 m.</option>
+                          <option value="1.46">1.46 m.</option>
+                          <option value="1.47">1.47 m.</option>
+                          <option value="1.48">1.48 m.</option>
+                          <option value="1.49">1.49 m.</option>
+                          <option value="1.50">1.50 m.</option>
+                          <option value="1.51">1.51 m.</option>
+                          <option value="1.52">1.52 m.</option>
+                          <option value="1.53">1.53 m.</option>
+                          <option value="1.54">1.54 m.</option>
+                          <option value="1.55">1.55 m.</option>
+                          <option value="1.56">1.56 m.</option>
+                          <option value="1.57">1.57 m.</option>
+                          <option value="1.58">1.58 m.</option>
+                          <option value="1.59">1.59 m.</option>
+                          <option value="1.60">1.60 m.</option>
+                          <option value="1.61">1.61 m.</option>
+                          <option value="1.62">1.62 m.</option>
+                          <option value="1.63">1.63 m.</option>
+                          <option value="1.64">1.64 m.</option>
+                          <option value="1.65">1.65 m.</option>
+                          <option value="1.66">1.66 m.</option>
+                          <option value="1.67">1.67 m.</option>
+                          <option value="1.68">1.68 m.</option>
+                          <option value="1.69">1.69 m.</option>
+                          <option value="1.70">1.70 m.</option>
+                          <option value="1.71">1.71 m.</option>
+                          <option value="1.72">1.72 m.</option>
+                          <option value="1.73">1.73 m.</option>
+                          <option value="1.74">1.74 m.</option>
+                          <option value="1.75">1.75 m.</option>
+                          <option value="1.76">1.76 m.</option>
+                          <option value="1.77">1.77 m.</option>
+                          <option value="1.78">1.78 m.</option>
+                          <option value="1.79">1.79 m.</option>
+                          <option value="1.80">1.80 m.</option>
+                          <option value="1.81">1.81 m.</option>
+                          <option value="1.82">1.82 m.</option>
+                          <option value="1.83">1.83 m.</option>
+                          <option value="1.84">1.84 m.</option>
+                          <option value="1.85">1.85 m.</option>
+                          <option value="1.86">1.86 m.</option>
+                          <option value="1.87">1.87 m.</option>
+                          <option value="1.88">1.88 m.</option>
+                          <option value="1.89">1.89 m.</option>
+                          <option value="1.90">1.90 m.</option>
+                          <option value="1.91">1.91 m.</option>
+                          <option value="1.92">1.92 m.</option>
+                          <option value="1.93">1.93 m.</option>
+                          <option value="1.94">1.94 m.</option>
+                          <option value="1.95">1.95 m.</option>
+                          <option value="1.96">1.96 m.</option>
+                          <option value="1.97">1.97 m.</option>
+                          <option value="1.98">1.98 m.</option>
+                          <option value="1.99">1.99 m.</option>
+                          <option value="2.00">2.00 m.</option>
+                          <option value="2.01">2.01 m.</option>
+                          <option value="2.02">2.02 m.</option>
+                          <option value="2.03">2.03 m.</option>
+                          <option value="2.04">2.04 m.</option>
+                          <option value="2.05">2.05 m.</option>
+                          <option value="2.06">2.06 m.</option>
+                          <option value="2.07">2.07 m.</option>
+                          <option value="2.08">2.08 m.</option>
+                          <option value="2.09">2.09 m.</option>
+                          <option value="2.10">2.10 m.</option>
+                          <option value="2.11">2.11 m.</option>
+                          <option value="2.12">2.12 m.</option>
+                          <option value="2.13">2.13 m.</option>
+                          <option value="2.14">2.14 m.</option>
+                          <option value="2.15">2.15 m.</option>
+                        </select><br><br>                        
+                        <label for="Denuncia-senas">Señas particulares</label><br>
+                        <input type="text" id="Denuncia-senas" name="Denuncia-senas" required placeholder="" size="30"><br><br>                        
+                        <label for="Denuncia-vest">Vestimenta</label><br>
+                        <input type="text" id="Denuncia-vest" name="Denuncia-vest" required placeholder="" size="30"><br><br>                     
+                        <label for="Denuncia-grupo">Grupo delictivo al que pertenece</label><br>
+                        <input type="text" id="Denuncia-grupo" name="Denuncia-grupo" required placeholder="" size="30"><br><br>                     
+                        <label for="Denuncia-pqj">Papel que juega</label><br>
+                        <input type="text" id="Denuncia-pqj" name="Denuncia-pqj" required placeholder="" size="30"><br><br>                     
+                        <label for="Denuncia-otroin">En caso de existir otro involucrado, descríbelo en el siguiente apartado</label><br>
+                        <input type="text" id="Denuncia-otroin" name="Denuncia-otroin" required placeholder="" size="30"><br><br>                     
+                        <label for="Denuncia-evidencia">Cuenta con evidencia (cabi.denuncias@transformacióndigital.gob.mx)</label><br>
+                        <select id="Denuncia-evidencia" name="Denuncia-evidencia" required>
+                            <option value="Fotografía">Fotografía</option>
+                            <option value="Video">Video</option>
+                            <option value="Documento">Documento</option>
+                            <option value="Audio">Audio</option>
+                        </select>
+                        <br><br>
+                        <label for="Denuncia-otroin">En caso de existir otro involucrado, descríbelo en el siguiente apartado</label><br>
+                        <textarea id="Denuncia-otroin" name="Denuncia-otroin" style="width:500px; height:100px;">Descripción de otros involucrados</textarea>
+                        <br><br>                   
+                        <label for="Denuncia-denu">¿Se ha informado el hecho a alguna autoridad?</label><br>
+                        <input type="text" id="Denuncia-denu" name="Denuncia-denu" required placeholder="" size="30"><br><br> 
+                        <label for="Denuncia-denuA">¿Qué autoridad?</label><br>
+                        <input type="text" id="Denuncia-denuA" name="Denuncia-denuA" required placeholder="" size="30"><br><br> 
+                        <label for="Denuncia-denuB">¿Qué ha hecho al respecto?</label><br>
+                        <input type="text" id="Denuncia-denuB" name="Denuncia-denuB" required placeholder="" size="30"><br><br>
+                        <label for="Denuncia-Segu">¿Considera que su seguridado de otras personas está en riesgo de forma tal que requiera alguna medida de protección?</label><br>
+                        <select id="Denuncia-Segu" name="Denuncia-Segu" required>
+                            <option value="Si">Si</option>
+                            <option value="No">No</option>
+                        </select><br><br>
+                        <label for="Denuncia-segu2">¿Por qué?</label><br>
+                        <input type="text" id="Denuncia-segu2" name="Denuncia-segu2" required placeholder="" size="30"><br><br> 
+                        <label for="Denuncia-AMIDS">¿Hay algo más importante que debamos saber?</label><br>
+                        <input type="text" id="Denuncia-AMIDS" name="Denuncia-AMIDS" required placeholder="" size="30"><br><br>
+                        <label for="Denuncia-Estatus">Estatus</label><br>
+                        <select id="Denuncia-Estatus" name="Denuncia-Estatus" required>
+                            <option value="Efectivo">Efectivo</option>
+                            <option value="No_Efectivo">No Efectivo</option>
+                            <option value="Emergencia">Emergencia</option>
+                        </select><br><br> 
+
+                    <label for="llaveMX-estatus">Estatus</label><br>
+                    <select id="llaveMX-estatus" name="llaveMX-estatus" required>
+                        <option value="Atendido">Atendido</option>
+                        <option value="Se brindaron instrucciones">Se brindaron instrucciones</option>
+                        <option value="Información errónea">Información errónea</option>
+                        <option value="Pendiente por cierre de folio">Pendiente por cierre de folio</option>
+                    </select>
+                    <br>
+                    </fieldset>    
+                
+                <!-- Pregunta Para otros -->
+                    <div id="otrosp" class="seccion" style="display: none;">
+                        <label for="ProgramasS-otro">Escribe el nombre del programa social</label><br>
+                        <input type="text" id="ProgramasS-otro" name="ProgramasS-otro" required placeholder="Nombre del programa" size="30">
+                        <br><br>
+                    </div>
+
+            </fieldset>
+            </div>
+            <br><br>
+            <!-- Botón Enviar -->
+            <button type="button" onclick="enviarFormulario()">Enviar Consulta</button>
+        </form>
+    
+        <a href="#leer-mas" class="button">Leer más de este tema</a>
+    </div>
+
+    <!-- Ajustes de texto -->
+    <div class="content text-adjust">
+        <button onclick="ajustarTexto('+')">Aa+</button>
+        <button onclick="ajustarTexto('-')">Aa-</button>
+    </div>
+
+    <script>
+        // Función para ajustar el tamaño del texto
+        function ajustarTexto(accion) {
+            const body = document.body;
+            const currentSize = parseFloat(window.getComputedStyle(body).fontSize);
+            body.style.fontSize = accion === '+' ? (currentSize + 2) + 'px' : (currentSize - 2) + 'px';
+        }
+        (function() {
+         document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            console.log('Menú contextual deshabilitado');
+         });
+        })();
+
+    // Mostrar la sección según la selección del usuario
+    (function() {
+        document.getElementById('tipo-consulta').addEventListener('change', function() {
+            const secciones = document.querySelectorAll('.seccion');
+            secciones.forEach(seccion => seccion.style.display = 'none');
+            const seleccion = this.value;
+            if (seleccion) {
+                document.getElementById(seleccion).style.display = 'block';
+           }
+            console.log('Evento change activado');
+        });
+        // Evento para otros
+        const subConsulta = document.getElementById('Prog-Soc');
+        subConsulta.addEventListener('change', function() {
+            document.getElementById('otrosp').style.display = 'none';
+            //document.getElementById('registro-opciones').style.display = 'none';
+
+            const seleccionSub = this.value;
+            console.log(seleccionSub);
+            if (seleccionSub === 'OtroP') {
+                document.getElementById('otrosp').style.display = 'block';
+            } else if (seleccionSub === 'registro') {
+                document.getElementById('registro-opciones').style.display = 'block';
+            }
+            
+        });
+
+    })();
+
+function enviarFormulario() {
+var form = document.getElementById('formulario');
+var formData = new FormData(form);
+
+fetch('https://script.google.com/macros/s/AKfycbxAvE_G771Z4ar_eKs5CYUVAfOyNkSrLH010Nt_rhv089xEbUj-8L9TMPuxAEQS-lc/exec', { // Apps Script
+method: 'POST',
+body: formData
+})
+.then(response => response.text())
+.then(data => {
+alert(data); // Muestra la respuesta del servidor
+if (data === "success") {
+form.reset(); // Limpia el formulario
+}
+})
+.catch(error => {
+console.error('Error:', error);
+alert('Error al enviar el formulario.');
+});
+}
+
+    </script>
+
+</body>
+</html>
